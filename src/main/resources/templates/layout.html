@@ -25,5 +25,27 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+    <script th:replace=":: js"></script>	
+	<script th:replace=":: inlinescript" th:inline="javascript"></script>
+
+	<script type="text/javascript">
+		$(function() {
+			$('[data-toggle="tooltip"]').tooltip()			
+		});
+		
+		var url = '';
+		
+		$('table').on('click', 'a', function() {
+			url = $(this).attr('href');
+		});
+		
+		$("#btnOk").on('click', function() {
+			document.location.href = url;
+		});
+		
+		$("#btnCancel").on('click', function() {
+			url = '';
+		});		
+	</script>
 </body>
 </html>
