@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head><meta charset="UTF-8"></head>
 <body>
 	<header th:fragment="cabecalho">
@@ -43,7 +43,7 @@
                     </ul>
                   </li>
                 </ul>
-                <form class="d-flex form-inline px-2">
+                <form class="d-flex form-inline px-2" sec:authorize="!isAuthenticated()">
                     <div class="form-check  mb-2 mr-sm-0">
                       <a class="btn btn-outline-success my-2 my-sm-0" role="button" th:href="@{/login}">Login</a>
                     </div>
@@ -51,10 +51,10 @@
                       <a class="btn btn-outline-success my-2 my-sm-0" role="button" th:href="@{/u/novo/cadastro}">Cadastrar-se</a>
                     </div>
                 </form>
-                <form class="d-flex form-inline mt-2 mt-md-0" th:action="@{/logout}" method="post">
+                <form class="d-flex form-inline mt-2 mt-md-0" th:action="@{/logout}" sec:authorize="isAuthenticated()" method="post">
                     <div class="btn-group mb-2 mr-sm-2">
                       <button type="button" class="btn btn-light">
-                        <i class="fas fa-user"></i> <span class="">Bob</span>
+                        <i class="fas fa-user"></i> <span class="" sec:authentication="name">Bob</span>
                       </button>
                       <button type="button"
                               class="btn btn-danger dropdown-toggle dropdown-toggle-split"

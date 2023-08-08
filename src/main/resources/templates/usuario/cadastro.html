@@ -4,7 +4,7 @@
 	  layout:decorate="~{layout}">
 <head><meta charset="UTF-8" /></head>
 <body>
-	<section class="layout-content" layout:fragment="corpo">
+	<section class="layout-content" layout:fragment="conteudo">
 		<main role="main">
             <section class="jumbotron text-center">
                 <img class="d-block mx-auto" th:src="@{/image/spring-security.png}" width="72" height="72">
@@ -41,7 +41,8 @@
 
                                 <div class="mb-3">
                                     <label for="perfis">Perfil</label>
-                                    <select id="perfis" class="custom-select" size="4" th:field="*{perfis}" multiple required>
+                                    <select id="perfis" class="form-select" size="4" th:field="*{perfis}" 
+                                            multiple required>
                                         <option value="1">Administrador</option>
                                         <option value="2">Médico</option>
                                         <option value="3">Paciente</option>
@@ -51,10 +52,10 @@
                                 </div>
                                 
                                 <div class="mb-3">
-                                    <div class="custom-control custom-switch">
-                                    <input type="checkbox" class="custom-control-input" 
+                                    <div class="form-check form-switch">
+                                    <input type="checkbox" class="form-check-input" 
                                                 th:field="*{ativo}" id="ativo" th:if="${ativo == true ? 'checked=checked' : ''}" />
-                                    <label class="custom-control-label" for="ativo">Cadastro Ativo</label>
+                                    <label class="form-check-label" for="ativo">Cadastro Ativo</label>
                                     </div>
                                 </div>
 

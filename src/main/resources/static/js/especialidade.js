@@ -25,7 +25,7 @@ $(document).ready(function () {
              data: 'id',
                 "render": function(id) {
                     return '<a class="btn btn-danger btn-sm btn-block" href="/especialidades/excluir/'+ 
-                    	id +'" role="button" data-toggle="modal" data-target="#confirm-modal"><i class="fas fa-times-circle"></i></a>';
+                    	id +'" role="button" data-bs-toggle="modal" data-bs-target="#confirm-modal"><i class="fas fa-times-circle"></i></a>';
                 }               
             }
         ]
